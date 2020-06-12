@@ -1,0 +1,404 @@
+<!--
+    SW Kim
+    2020.06.12
+    Project_3-Build_a_Product_Landing_Page
+-->
+
+<!DOCTYPE html>
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #F5F5F5;
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Building Menu Starts Here */
+        header {
+            position: fixed;
+            top: 0;
+            min-height: 75px;
+            padding: 0px 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #F5F5F5;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-wrap: wrap;
+            }
+        }
+
+        .logo {
+            width: 60vw;
+        }
+
+        @media (max-width: 650px) {
+            .logo {
+                margin-top: 15px;
+                width: 100%;
+                position: relative;
+            }
+        }
+
+        .logo > img {
+            width: 100%;
+            height: 100%;
+            max-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-left: 20px;
+        }
+
+        @media (max-width: 650px) {
+            .logo > img {
+                margin: 0 auto;
+            }
+        }
+
+        nav {
+            font-weight: 400;
+        }
+
+        @media (max-width: 650px) {
+        nav {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 50px;
+        }
+        nav li {
+            padding-bottom: 5px;
+            }
+        }
+
+        nav > ul {
+            width: 35vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        @media (max-width: 650px) {
+        nav > ul {
+            flex-direction: column;
+            }
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        /* Building Menu Ends Here */
+
+       .grid {
+           display: flex;
+           flex-wrap: wrap;
+           height: auto;
+       }
+
+       #intro {
+           display: flex;
+           flex-direction: column;
+           height: 150px;
+           width: auto;
+           text-align: center;
+       }
+
+       #submit {
+           width: auto;
+           height: 35px;
+           padding-left: 3%;
+           padding-right: 3%;
+           font-weight: 1000;
+           font-size: medium;
+           background-color: orange;
+           border: none;
+           margin-top: 20px;
+       }
+       #submit:hover {
+           background-color: darkorange;
+       }
+
+       div {
+           margin: 0;
+       }
+
+        /* User Story #14: My product landing page should have at least one media query. */
+      
+       p {
+           margin: 0;  
+       }
+       
+       .icon {
+           width: 25%;
+           height: 100%;
+           color: orange;
+           align-self: center;
+           text-align: center;
+       }
+       .text {
+           width: 75%;
+           height: 100%;
+       }
+
+       .text > h2 {
+           margin: 0;
+       }
+
+       section {
+           margin-top: 80px;
+           margin-bottom: 80px;
+       }
+
+       #youtube {
+           display: flex;
+           justify-content: center;
+       }
+
+       #pricing {
+           margin-top: 80px;
+           justify-content: space-evenly;
+           margin-bottom: 40px;
+       }
+
+       #one {
+           display: flex;
+           flex-direction: column;
+           flex-basis: 290px;
+           border: 1px solid black;
+           align-items: center;
+       }
+
+       #two {
+           display: flex;
+           flex-direction: column;
+           flex-basis: 290px;
+           border: 1px solid black;
+           align-items: center;
+       }
+
+       #three {
+           display: flex;
+           flex-direction: column;
+           flex-basis: 290px;
+           border: 1px solid black;
+           align-items: center;
+       }
+
+       .topbar {
+           display: flex;
+           width: 100%;
+           height: 100%;
+           padding-top: 10px;
+           padding-bottom: 10px;
+           background-color: lightgray;
+           justify-content: center;
+           align-items: center;
+       }
+
+       #one > p, #two > p, #three > p {
+           margin-top: 5px;
+       }
+
+       .selectButton {
+           background-color: orange;
+           font-size: medium;
+           border-width: 0;
+           padding: 10px 20px 10px 20px;
+           margin-bottom: 20px;
+       }
+
+       .selectButton:hover {
+           background-color: darkorange;
+       }
+
+       #footer {
+           display: flex;
+           background-color: lightgray;
+           width: 100%;
+           height: 100%;
+           padding: 20px 20px 10px 20px;
+           margin: 40px 15px 0px 15px;
+           justify-content: flex-end;
+           text-align: right;
+       }
+       #footerv {
+           display: flex;
+           flex-direction: column;
+       }
+
+       #footerButton {
+           font-weight: 550;
+           margin-bottom: 5px;
+       }
+
+       #copyright {
+           font-size: smaller;
+           opacity: 50%;
+       }
+
+       .aspace {
+           margin-right: 10px;
+           text-decoration: none;
+           color: black;
+       }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+
+</head>
+
+<html>
+    <body>
+        <a name="top"></a>
+
+        <!--User Story #1: My product landing page should have a header element with a corresponding id="header".-->
+        <header id="header">
+            <div class="logo">
+                <!--User Story #2: I can see an image within the header element with a corresponding id="header-img". A company logo would make a good image here.-->
+              <img
+                id="header-img"
+                src="https://s3.amazonaws.com/freecodecamp/original_trombones.png"
+                alt="original trombones logo"
+              />
+            </div>
+        
+            <!--User Story #3: Within the #header element I can see a nav element with a corresponding id="nav-bar".-->
+            <nav id="nav-bar">
+                <!--User Story #4: I can see at least three clickable elements inside the nav element, each with the class nav-link.-->
+                <!--User Story #5: When I click a .nav-link button in the nav element, I am taken to the corresponding section of the landing page.-->
+              <ul>
+                <li><a class="nav-link" href="#features">Features</a></li>
+                <li><a class="nav-link" href="#youtube">How It Works</a></li>
+                <li><a class="nav-link" href="#pricing">Pricing</a></li>
+              </ul>
+            </nav>
+        </header>
+
+
+
+
+
+        <section id="intro">
+            <h2>Handcrafted, home-made masterpieces</h2>
+            <!--User Story #7: My landing page has a form element with a corresponding id="form".-->
+            <!--User Story #12: When I click the #submit element, the email is submitted to a static page (use this mock URL: https://www.freecodecamp.com/email-submit).-->
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <!--User Story #8: Within the form, there is an input field with id="email" where I can enter an email address.-->
+                <!--User Story #9: The #email input field should have placeholder text to let the user know what the field is for.-->
+                <!--User Story #10: The #email input field uses HTML5 validation to confirm that the entered text is an email address.-->
+                <input id="email" type="email" size="35" placeholder="Enter your email address" required>
+                <br>
+                <!--User Story #11: Within the form, there is a submit input with a corresponding id="submit".-->
+                <input id="submit" type="submit" value="Get Started">
+            </form>
+        </section>
+        
+        <!--User Story #12: When I click the #submit element, the email is submitted to a static page (use this mock URL: https://www.freecodecamp.com/email-submit).-->
+        <section id="features">
+            <div class="grid">
+                <div class="icon">
+                    <p class="fa fa-3x fa-fire"></p>
+                </div>
+                <div class="text">
+                    <h2>Premium Materials</h2>
+                    <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+                </div>
+            </div>
+            <br><br>
+            <div class="grid">
+                <div class="icon">
+                    <p class="fa fa-3x fa-truck"></p>
+                </div>
+                <div class="text">
+                    <h2>Fast Shipping</h2>
+                    <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+                </div>
+            </div>
+            <br><br>
+            <div class="grid">
+                <div class="icon">
+                    <p class="fa fa-3x fa-battery-full"></p>
+                </div>
+                <div class="text">
+                    <h2>Quality Assurance</h2>
+                    <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
+                </div>
+            </div>
+        </section>
+
+        <div id="youtube">
+            <!--User Story #6: I can watch an embedded product video with id="video".-->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/y8Yv4pnO7qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!--User Story #15: My product landing page should utilize CSS flexbox at least once.-->
+        <div id="pricing" class="grid">
+            <div id="one">
+                <div class="topbar">
+                    <p><b>TENOR TROMBONE</b></p>
+                </div>
+                <h2>$600</h2>
+                <p>Loren ipsum.</p>
+                <p>Loren ipsum.</p>
+                <p>Loren ipsum dolor.</p>
+                <p>Loren ipsum.</p><br>
+                <input type="button" value="SELECT" class="selectButton">
+            </div>
+            <div id="two">
+                <div class="topbar">
+                    <p><b>BASS TROMBONEE</b></p>
+                </div>
+                <h2>$900</h2>
+                <p>Loren ipsum.</p>
+                <p>Loren ipsum.</p>
+                <p>Loren ipsum dolor.</p>
+                <p>Loren ipsum.</p><br>
+                <input type="button" value="SELECT" class="selectButton">
+            </div>
+            <div id="three">
+                <div class="topbar">
+                    <p><b>VALVE TROMBONE</b></p>
+                </div>
+                <h2>$1200</h2>
+                <p>Loren ipsum.</p>
+                <p>Loren ipsum.</p>
+                <p>Loren ipsum dolor.</p>
+                <p>Loren ipsum.</p><br>
+                <input type="button" value="SELECT" class="selectButton">
+            </div>
+
+            <div id="footer">
+                <div id="footerv">
+                    <div id="footerButton">
+                        <a class="aspace" href="#top">Privacy</a>
+                        <a class="aspace" href="#top">Terms</a>
+                        <a class="aspace" href="#top">Contact</a>
+                    </div>
+                    <div id="copyright">
+                        <p>Copyright 2020, Original Trombones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
