@@ -5,12 +5,103 @@
 -->
 
 <!DOCTYPE html>
+<html>
+
 <head>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #navbar {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            width: 100vw;
+        }
 
+        #navbar ul {
+            list-style-type: none;
+            float: right; /* to keep navbar items in order */
+            padding: 0;
+            margin: 0;
+        }
+
+        #navbar li {
+            float: left; /* flip again to keep navbar items in order */
+        }
+
+        #navbar a {
+            color: white;
+            display: block;
+            text-align: center;
+            padding: 30px 20px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-size: large;
+        }
+
+        #navbar a:hover {
+            background-color: black;
+        }
+
+        .active {
+            background-color: black;
+        }
+
+        #welcome-section {
+            background-color: lightgrey;
+            height: 100vw;
+        }
+
+        .project-tile {
+            display: grid;
+        }
+
+        /* User Story #9: My portfolio should have at least one media query. */
+        @media only screen and (max-width: 800px) {
+            /* For mobile phones: */
+
+        }
     </style>
 </head>
 
-<html>
+<body>
+    <!--User Story #6: My portfolio should have a navbar with an id of navbar.-->
+    <div id="navbar">
+        <ul>
+            <!--User Story #7: The navbar should contain at least one link that I can click on to navigate to different sections of the page.-->
+            <li><a class="active" href="#projects">About</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#projects">Contact</a></li>
+        </ul>
+    </div>
+
+    <!--User Story #1: My portfolio should have a welcome section with an id of welcome-section.-->
+    <section id="welcome-section">
+        <!--User Story #2: The welcome section should have an h1 element that contains text.-->
+        <h1>Hey I am SW</h1>
+        <h3>a web developer</h3>
+    </section>
+
+    <!--User Story #3: My portfolio should have a projects section with an id of projects.-->
+    <section id="projects">
+        <!--User Story #4: The projects section should contain at least one element with a class of project-tile to hold a project.-->
+        <!--Grid-->
+        <div class="project-tile">
+            <!--User Story #5: The projects section should contain at least one link to a project.-->
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <!--User Story #8: My portfolio should have a link with an id of profile-link, which opens my GitHub or FCC profile in a new tab.-->
+        <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects"><button>Show all <b>></b></button></a>
+    </section>
+</body>
     
 </html>
