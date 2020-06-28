@@ -9,15 +9,30 @@
 
 <head>
     <style>
+        :root {
+            --main-white: #f0f0f0;
+            --main-red: #be3144;
+            --main-blue: #45567d;
+            --main-gray: #303841;
+        }
+
+        /* Base reset */
         * {
             padding: 0;
             margin: 0;
         }
+
+        html {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Section */
         #navbar {
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #333;
+            background-color: var(--main-red);
             /* User Story #11: The navbar should always be at the top of the viewport. */
             position: fixed;
             width: 100%;
@@ -27,7 +42,7 @@
             list-style-type: none;
             float: right; /* to keep navbar items in order */
             padding: 0;
-            margin: 0;
+            margin: 0px 20px 0px 0px;
         }
 
         #navbar li {
@@ -35,32 +50,109 @@
         }
 
         #navbar a {
-            color: white;
+            color: var(--main-white);
             display: block;
             text-align: center;
-            padding: 30px 20px;
+            padding: 25px 20px;
             text-decoration: none;
             font-family: sans-serif;
-            font-size: large;
+            font-size: 20px;
+            font-weight: bold;
         }
 
         #navbar a:hover {
-            background-color: black;
+            background-color: var(--main-blue);
         }
 
         .active {
-            background-color: black;
+            background-color: var(--main-blue);
+        }
+        /* Navbar Section End */
+
+        /* Welcome Section */
+        #welcome-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            /* User Story #10: The height of the welcome section should be equal to the height of the viewport. */
+            height: 100vh;
+            background-color: #000;
+            background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
         }
 
-        #welcome-section {
-            background-color: darkgray;
-            /* User Story #10: The height of the welcome section should be equal to the height of the viewport. */
-            height: 100vw;
+        #welcome-section h1 {
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
+            font-size: 80px;
+            color: var(--main-white);
+        }
+
+        #welcome-section p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 35px;
+            font-style: italic;
+            color: var(--main-red);
+            padding-top: 10px;
+        }
+        /* Welcome Section End */
+
+        /* Project Section */
+        #projects {
+            background-color: var(--main-blue);
+            text-align: center;
+            padding: 100px 20px;
         }
 
         .project-tile {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-gap: 40px;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            margin-bottom: 60px;
         }
+
+        #projects h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 40px;
+            color: var(--main-white);
+            max-width: 640px;
+            margin: 0 auto 6rem auto;
+            border-bottom: 2px solid var(--main-white);
+        }
+
+        .project-image {
+            height: calc(100% - 68px);
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .project {
+            text-decoration: none;
+            background-color: var(--main-gray);
+        }
+
+        .project-text {
+            padding: 20px 5px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 20px;
+            color: var(--main-white);
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .code {
+            color: var(--main-gray);
+            transition: color 0.3s ease-out;
+        }
+
+        .project:hover .code {
+            color: #ff7f50;
+        }
+        /* Project Section End */
 
         /* User Story #9: My portfolio should have at least one media query. */
         @media only screen and (max-width: 800px) {
@@ -85,21 +177,75 @@
     <section id="welcome-section">
         <!--User Story #2: The welcome section should have an h1 element that contains text.-->
         <h1>Hey I am SW</h1>
-        <h3>a web developer</h3>
+        <p>a web developer</p>
     </section>
 
     <!--User Story #3: My portfolio should have a projects section with an id of projects.-->
     <section id="projects">
+        <h2>These are some of my projects</h2>
         <!--User Story #4: The projects section should contain at least one element with a class of project-tile to hold a project.-->
         <!--Grid-->
         <div class="project-tile">
             <!--User Story #5: The projects section should contain at least one link to a project.-->
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <!-- Item #1 -->
+            <a class="project" href="https://codepen.io/freeCodeCamp/full/zNBOYG" target="blank">
+                <img class="project-image" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/tribute.jpg" alt="project1">
+                <p class="project-text">
+                    <span class="code">&lt;</span>
+                    Tribute Page
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+
+            <!-- Item #2 -->
+            <a class="project" href="https://codepen.io/freeCodeCamp/full/zNBOYG" target="blank">
+                <img class="project-image" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/random-quote-machine.png" alt="project2">
+                <p class="project-text">
+                    <span class="code">&lt;</span>
+                    Ramdom Quote Machine
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+
+            <!-- Item #3 -->
+            <a class="project" href="https://codepen.io/freeCodeCamp/full/zNBOYG" target="blank">
+                <img class="project-image" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/calc.png" alt="project3">
+                <p class="project-text">
+                    <span class="code">&lt;</span>
+                    JavaScript Calculator
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+
+            <!-- Item #4 -->
+            <a class="project" href="https://codepen.io/freeCodeCamp/full/zNBOYG" target="blank">
+                <img class="project-image" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/map.jpg" alt="project4">
+                <p class="project-text">
+                    <span class="code">&lt;</span>
+                    Map Data Across the Globe
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+
+            <!-- Item #5 -->
+            <a class="project" href="https://codepen.io/freeCodeCamp/full/zNBOYG" target="blank">
+                <img class="project-image" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/wiki.png" alt="project5">
+                <p class="project-text">
+                    <span class="code">&lt;</span>
+                    Wikipedia Viewer
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+
+            <!-- Item #6 -->
+            <a class="project" href="https://codepen.io/freeCodeCamp/full/zNBOYG" target="blank">
+                <img class="project-image" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/images/tic-tac-toe.png" alt="project6">
+                <p class="project-text">
+                    <span class="code">&lt;</span>
+                    Tic Tac Toe Game
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
         </div>
         <!--User Story #8: My portfolio should have a link with an id of profile-link, which opens my GitHub or FCC profile in a new tab.-->
         <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects"><button>Show all <b>></b></button></a>
