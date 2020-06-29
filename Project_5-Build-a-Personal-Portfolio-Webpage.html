@@ -221,11 +221,61 @@
 
         #socialmedia {
             padding-top: 50px;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            max-width: 980;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         #socialmedia > a {
             text-decoration: none;
+            padding: 0px 15px 0px 15px;
+        }
+        .socialmediafont {
+            font-family: 'Raleway', sans-serif;
+            color: var(--main-white);
+            font-size: 22px;
+            text-shadow: 2px 2px 1px #1f1f1f;
+            transition: transform 0.3s ease-out;
+        }
+        .socialmediafont:hover {
+            transform: translateY(8px);
         }
         /* Social Media Contact Section End */
+
+        /* Footer Section */
+        #footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            font-family: 'Raleway', sans-serif;
+            color: var(--main-white);
+            font-size: 18px;
+            background-color: var(--main-gray);
+            border-top: 4px solid var(--main-red);
+        }
+        
+        #footer > p {
+            padding: 50px 20px 50px 20px;
+        }
+
+        #copyright > a {
+            text-decoration: none;
+            color: var(--main-white);
+        }
+
+        #copyright i {
+            vertical-align: middle;
+        }
+
+        @media only screen and (max-width: 800px) {
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        /* Footer Section End */
 
         /* User Story #9: My portfolio should have at least one media query. */
         @media only screen and (max-width: 800px) {
@@ -334,22 +384,33 @@
         <h5>How do you take your coffee?</h5>
 
         <div id="socialmedia">
-            <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
-                <i class="fab fa-facebook-square" class="socialmediafont"></i> Facebook
+            <a class="socialmediafont" href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
+                <i class="fab fa-facebook-square"></i> Facebook
             </a>
-            <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
-                <i class="fab fa-github" class="socialmediafont"></i> GitHub
+            <a class="socialmediafont" href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
+                <i class="fab fa-github"></i> GitHub
             </a>
-            <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
-                <i class="fab fa-twitter" class="socialmediafont"></i> Twitter
+            <a class="socialmediafont" href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
+                <i class="fab fa-twitter"></i> Twitter
             </a>
-            <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
-                <i class="fas fa-at" class="socialmediafont"></i> Send a mail
+            <a class="socialmediafont" href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
+                <i class="fas fa-at"></i> Send a mail
             </a>
-            <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
-                <i class="fas fa-mobile-alt" class="socialmediafont"></i> Call me
+            <a class="socialmediafont" href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
+                <i class="fas fa-mobile-alt"></i> Call me
             </a>
         </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section id="footer">
+        <p id="disclaimer">**This is just a fake portfolio. All the projects and contact details given are not real.</p>
+        <p id="copyright">
+            &copy; Created for
+            <a href="https://www.freecodecamp.com/" target="_blank"
+              >freeCodeCamp <i class="fab fa-free-code-camp"></i
+            ></a>
+        </p>
     </section>
 </body>
     
