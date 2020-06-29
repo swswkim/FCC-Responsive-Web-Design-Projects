@@ -1,6 +1,6 @@
 <!--
     SW Kim
-    2020.06.
+    2020.06.29
     Project_5-Build-a-Personal-Portfolio-Webpage
 -->
 
@@ -113,6 +113,17 @@
             color: var(--main-red);
             padding-top: 10px;
         }
+
+        /* User Story #9: My portfolio should have at least one media query. */
+        @media only screen and (max-width: 800px) {
+            /* For mobile phones: */
+            #welcome-section h1 {
+                font-size: 60px;
+            }
+            #welcome-section p {
+                font-size: 30px;
+            }
+        }
         /* Welcome Section End */
 
         /* Project Section */
@@ -199,7 +210,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            width: 100%;
             height: calc(100vh - 80px);
             background-color: var(--main-gray);
             padding: 0px 20px;
@@ -276,12 +286,6 @@
             }
         }
         /* Footer Section End */
-
-        /* User Story #9: My portfolio should have at least one media query. */
-        @media only screen and (max-width: 800px) {
-            /* For mobile phones: */
-
-        }
     </style>
 </head>
 
