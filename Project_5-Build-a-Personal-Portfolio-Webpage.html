@@ -6,7 +6,24 @@
 
 <!DOCTYPE html>
 <html>
-
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    >
+    <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+        crossorigin="anonymous"
+    >
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
+        rel="stylesheet"
+    >
 <head>
     <style>
         :root {
@@ -120,7 +137,7 @@
             font-size: 40px;
             color: var(--main-white);
             max-width: 640px;
-            margin: 0 auto 6rem auto;
+            margin: 0 auto 100px auto;
             border-bottom: 2px solid var(--main-white);
         }
 
@@ -152,7 +169,63 @@
         .project:hover .code {
             color: #ff7f50;
         }
+
+        #show-all-button {
+            background: var(--main-gray);
+            color: var(--main-white);
+            border: 1px;
+            border-radius: 3px;
+            padding: 10px 20px;
+            font-size: 20px;
+            transition: background 0.3s ease-out;
+        }
+        #show-all-button:hover {
+            background: var(--main-red);
+        }
+        #show-all-button > i {
+            font-weight: bolder;
+            font-size: x-large;
+            transition: transform 0.3s ease-out;
+        }
+        #show-all-button:hover > i {
+            transform: translateX(5px);
+        }
         /* Project Section End */
+
+        /* Social Media Contact Section */
+        #contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background-color: var(--main-gray);
+            padding: 0px 20px;
+        }
+
+        #contact > h1 {
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
+            font-size: 80px;
+            color: var(--main-white);
+        }
+        #contact > h5 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 25px;
+            font-style: italic;
+            color: var(--main-red);
+            padding-top: 10px;
+        }
+
+        #socialmedia {
+            padding-top: 50px;
+        }
+        #socialmedia > a {
+            text-decoration: none;
+        }
+        /* Social Media Contact Section End */
 
         /* User Story #9: My portfolio should have at least one media query. */
         @media only screen and (max-width: 800px) {
@@ -248,7 +321,35 @@
             </a>
         </div>
         <!--User Story #8: My portfolio should have a link with an id of profile-link, which opens my GitHub or FCC profile in a new tab.-->
-        <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects"><button>Show all <b>></b></button></a>
+        <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
+            <button id="show-all-button">
+                Show all <i class="fa fa-angle-right"></i>
+            </button>
+        </a>
+    </section>
+
+    <!-- Social Media Contact Section -->
+    <section id="contact">
+        <h1>Let's work together...</h1>
+        <h5>How do you take your coffee?</h5>
+
+        <div id="socialmedia">
+            <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
+                <i class="fab fa-facebook-square" class="socialmediafont"></i> Facebook
+            </a>
+            <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
+                <i class="fab fa-github" class="socialmediafont"></i> GitHub
+            </a>
+            <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
+                <i class="fab fa-twitter" class="socialmediafont"></i> Twitter
+            </a>
+            <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
+                <i class="fas fa-at" class="socialmediafont"></i> Send a mail
+            </a>
+            <a href="https://github.com/swswkim/FCC-Responsive-Web-Design-Projects" target="_blank">
+                <i class="fas fa-mobile-alt" class="socialmediafont"></i> Call me
+            </a>
+        </div>
     </section>
 </body>
     
