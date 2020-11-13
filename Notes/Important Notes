@@ -1,0 +1,196 @@
+/*
+    SW Kim
+    2020.07.07
+    CSS Key Notes
+*/
+
+/* Importing external styles or data */
+@import "https://fonts.googleapis.com/css?family=Lato:400,700";
+
+/* Custom Variable Declaration */
+:root {
+    --background-color: lightgray; /* Global variable starts with "--" */
+}
+
+/* Hwo to use global variables */
+html {
+    background-color: var(--background-color);
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* The box-sizing property allows us to include the padding and border in an element's total width and height. */
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* How to put image */
+<img src="pic_trulli.jpg" alt="Italian Trulli">
+
+/* Remove Bullet Points */
+#navbar {
+    list-style-type: none;
+}
+
+/* Remove blue color and underline for links = <a> tag */
+a {
+    text-decoration: none;
+}
+
+/* Overflowing text */
+#overFlow {
+    overflow: scroll; /* Scroll box */
+    overflow: hidden; /* Removes overflowing text */
+    overflow: auto; /* Automatically determined */
+    overflow: visible; /* Default setting - shows overflowing text */
+}
+
+/* Vertical align between texts */
+img.a {
+    vertical-align: baseline; /* Default */
+    vertical-align: text-top; /* Top align */
+    vertical-align: text-bottom; /* Bottom align */
+    vertical-align: sub; /* Bottm align */
+    vertical-align: super; /* Top align */
+}
+
+/* Fonts */
+#fonts {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: black;
+}
+
+/* How to center image */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+
+/* Flexbox */
+#flexBox {
+    display: flex;           /* turn flexbox on */
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+}
+
+/* Grid */
+/* Grid CSS code */
+.grid-container {
+    display: grid; /* Generates a block-level grid */
+    display: inline-grid; /* Generates an inline-level grid - some additional text that's adjacent to the inline grid */
+}
+
+/* Setting grid gaps */
+.item1 {
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    grid-gap: 50px;
+}
+
+/* X-axis size increase */
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+/* Y-axis size increase */
+.item1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+/* Making a grid with 4 columns and 2 rows */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 80px 100px;
+
+    /* Horizontal (Column) alignment */
+    justify-content: space-evenly; /* Equal column width including padding */
+    justify-content: space-around; /* Equal column around each grid - double column width between grid items */
+    justify-content: space-between; /* Equal column spacing between items only - no padding */
+    justify-content: center; /* Grid items grouped center */
+    justify-content: start; /* Grid items grouped left */
+    justify-content: end; /* Grid items grouped right */
+
+    /* Vertical (Row) alignment */
+    align-content: space-evenly; /* Equal row width including padding */
+    align-content: space-around; /* Equal row around each grid - double row height between grid items */
+    align-content: space-between; /* Equal row spacing between items only - no padding */
+    align-content: center; /* Grid items grouped center */
+    align-content: start; /* Grid items grouped top */
+    align-content: end; /* Grid items grouped bottom */
+}
+
+/* Parent and child element html*/
+<div class="grid-container">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>  
+    <div class="item4">4</div>
+    <div class="item5">5</div>
+    <div class="item6">6</div>
+    <div class="item7">7</div>
+    <div class="item8">8</div> 
+</div>
+/* End of making a grid with 4 columns and 2 rows */
+
+/* Responsive web design */
+@media only screen and (max-width: 800px) { /* For screens smaller than 800px */
+    #welcome-section h1 {
+        font-size: 60px;
+    }
+    #welcome-section p {
+        font-size: 30px;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Transitions */
+transition-delay: 1s;   /* Delays transitions */
+
+transition-timing-function: linear; /* Same speed throughout */
+transition-timing-function: ease; /* Ease in and out */
+transition-timing-function: ease-in; /* Ease in only */
+transition-timing-function: ease-out; /* East out only */
+transition-timing-function: ease-in-out; /* Similar to ease */
+
+/* Making red box grow to 300px when hovering a mouse */
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+}
+
+/* Change described here */
+div:hover {
+    width: 300px; /* Property must be pre-defined in the div element above */
+}
+
+/* Transition shorthand property */
+div {
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+}
+
+/* Same as above in shorthand format */
+div {
+    transition: width 2s linear 1s;
+}
